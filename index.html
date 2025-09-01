@@ -1,36 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Shibaroo – Official Meme Token</title>
-  <meta name="description" content="Shibaroo blends the charm of a Shiba Inu with the bounce of a kangaroo. Fun, community-driven meme token. 0% tax." />
-  <link rel="canonical" href="https://www.shibaroo.com/" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="theme-color" content="#0d0d0d" />
+  <!-- Core -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shibaroo — Official Meme Token</title>
+  <meta name="description" content="Shibaroo blends Shiba energy with kangaroo hops. Community-first meme token with simple, transparent vibes.">
+
+  <!-- Canonical + Basic SEO -->
+  <link rel="canonical" href="https://www.shibaroo.com/">
+  <meta name="robots" content="index,follow">
+
+  <!-- Icons / Manifest -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0d12">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.shibaroo.com/" />
-  <meta property="og:title" content="Shibaroo – Official Meme Token" />
-  <meta property="og:description" content="Fun, community-driven meme token. 0% tax. Join us on Telegram & Discord." />
-  <meta property="og:image" content="https://www.shibaroo.com/og-image.jpg" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.shibaroo.com/">
+  <meta property="og:title" content="Shibaroo — Official Meme Token">
+  <meta property="og:description" content="Shiba energy. Kangaroo hops. Community-first meme token.">
+  <meta property="og:image" content="https://www.shibaroo.com/og-image.jpg">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Shibaroo – Official Meme Token" />
-  <meta name="twitter:description" content="Fun, community-driven meme token. 0% tax. Join us on Telegram & Discord." />
-  <meta name="twitter:image" content="https://www.shibaroo.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shibaroo — Official Meme Token">
+  <meta name="twitter:description" content="Shiba energy. Kangaroo hops. Community-first meme token.">
+  <meta name="twitter:image" content="https://www.shibaroo.com/og-image.jpg">
 
-  <!-- JSON-LD -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Cryptocurrency",
-    "name":"Shibaroo",
-    "url":"https://www.shibaroo.com/",
-    "description":"Shibaroo blends the charm of a Shiba Inu with the bounce of a kangaroo. Fun, community-driven meme token.",
-    "sameAs":[
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Shibaroo",
+    "url": "https://www.shibaroo.com/",
+    "sameAs": [
       "https://t.me/+K8QwisITfMNiYjM1",
       "https://discord.gg/ZytXFnxU",
       "https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h"
@@ -40,268 +47,260 @@
 
   <style>
     :root{
-      --bg:#0b0b0c; --card:#111216; --ink:#e9e9ef; --muted:#9aa0a6; --brand:#ffcc33; --brand-d:#d1a600;
-      --accent:#72f1b8;
+      --bg:#0b0d12; --ink:#f2f4f8; --muted:#9aa0a6; --line:#20232b;
+      --brand:#ffcc33; --accent:#72f1b8;
+      --link:#d5f5e8; --link-h:#baf0db;
     }
+    /* Base */
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    header{position:sticky;top:0;background:rgba(11,11,12,.8);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #1b1c22;z-index:50}
-    .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-    .nav{display:flex;align-items:center;gap:12px;justify-content:space-between;height:64px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
-    .logo-badge{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--brand),#fe6);box-shadow:0 0 0 2px #222 inset}
-    .nav a{color:var(--ink)}
-    .links{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border-radius:12px;background:var(--brand);color:#161616;font-weight:700;border:1px solid #0003;box-shadow:0 6px 18px rgba(255,204,51,.12)}
-    .btn:hover{background:var(--brand-d)}
-    .btn.ghost{background:transparent;border:1px solid #2b2d36;color:var(--ink)}
-    .hero{padding:72px 0 36px;border-bottom:1px solid #1b1c22;background:
-      radial-gradient(1200px 600px at 10% -20%, #1c1d24 0%, transparent 60%),
-      radial-gradient(1000px 500px at 90% -30%, #171822 0%, transparent 60%)
-    }
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
-    .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px dashed #3a3b44;border-radius:999px;color:var(--muted);font-size:12px}
-    h1{font-size:44px;margin:10px 0 8px;line-height:1.05}
-    p.lead{color:#caccd8;font-size:18px;margin:0 0 22px;max-width:60ch}
-    .card{background:var(--card);border:1px solid #1b1c22;border-radius:16px;padding:16px}
-    .hero .card{padding:0;overflow:hidden}
-    .illus{aspect-ratio:4/3;background:#0e0f12 url('/banner.jpg') center/cover no-repeat}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    section{padding:56px 0;border-bottom:1px solid #1b1c22}
-    h2{font-size:28px;margin:0 0 12px}
-    .muted{color:var(--muted)}
-    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .kpi{background:var(--card);border:1px solid #1b1c22;border-radius:14px;padding:14px}
-    .mono{font-family:ui-monospace,Menlo,Consolas,monospace}
-    .faq details{background:var(--card);border:1px solid #1b1c22;border-radius:12px;padding:12px}
-    .faq details+details{margin-top:10px}
-    footer{padding:30px 0;color:var(--muted)}
-    .top{position:fixed;right:16px;bottom:16px;border-radius:999px;border:1px solid #2b2d36;background:#111216;padding:10px 12px}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial;}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline;color:var(--link-h)}
+    img{max-width:100%;height:auto}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+    /* Layout */
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px}
+    header{position:sticky;top:0;background:rgba(11,13,18,.85);
+      backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid var(--line); z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.4px}
+    .brand-badge{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--brand),#ffe173)}
+    nav ul{margin:0;padding:0;display:flex;gap:14px;list-style:none;flex-wrap:wrap}
+    nav a{color:var(--ink)}
+    nav a[aria-current="page"]{text-decoration:underline}
+
+    /* Hero (like your original: heading + banner) */
+    .hero{padding:56px 0;border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+    h1{font-size:40px;line-height:1.1;margin:8px 0}
+    .lead{color:#cbd1d9;max-width:60ch}
+    figure.hero-media{margin:0;background:#0f1117;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    figcaption{position:absolute;left:-9999px} /* purely decorative caption hidden */
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px dashed #394150;border-radius:999px;color:var(--muted);font-size:12px}
+
+    /* Sections */
+    section{padding:44px 0;border-bottom:1px solid var(--line)}
+    h2{font-size:26px;margin:0 0 12px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .card{background:#0f1117;border:1px solid var(--line);border-radius:12px;padding:14px}
+    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
+
+    /* FAQ */
+    details{background:#0f1117;border:1px solid var(--line);border-radius:12px;padding:12px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer}
+
+    /* Footer + Back to top */
+    footer{padding:28px 0;color:var(--muted)}
+    .top{position:fixed;right:12px;bottom:12px;border-radius:999px;border:1px solid var(--line);
+      background:#0f1117;padding:10px 12px;display:none}
+    .top.show{display:inline-flex}
+    .top:focus-visible{outline:2px solid var(--accent)}
+
+    /* Responsive */
     @media (max-width:860px){
       .hero-grid{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
-      .kpis{grid-template-columns:1fr 1fr}
+      .kpis{grid-template-columns:1fr}
+    }
+
+    /* Reduced motion: respect user pref */
+    @media (prefers-reduced-motion: no-preference){
+      html{scroll-behavior:smooth}
     }
   </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <div class="logo">
-      <span class="logo-badge" aria-hidden="true"></span>
-      <span>Shibaroo</span>
-    </div>
-    <nav class="links" aria-label="Primary">
-      <a href="#home">Home</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#faq">FAQ</a>
-      <a href="#business">Business</a>
-    </nav>
-  </div>
-</header>
+  <!-- Skip link for screen readers -->
+  <a href="#main" class="wrap" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
-<main id="home" class="wrap hero">
-  <div class="hero-grid">
-    <div>
-      <span class="tag">0% Tax • Community-First • Lightning Fast</span>
-      <h1>Meet <span class="mono">SHIBAROO</span> — the bouncy Shiba 🐶🦘</h1>
-      <p class="lead">Born for fun, built for community. Shibaroo mixes Shiba energy with kangaroo hops—memes, utility, and good vibes in one place.</p>
-      <div class="links" style="margin:18px 0 8px">
-        <a class="btn" href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank" rel="noopener">Buy on pump.fun</a>
-        <a class="btn ghost" href="https://t.me/+K8QwisITfMNiYjM1" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn ghost" href="https://discord.gg/ZytXFnxU" target="_blank" rel="noopener">Discord</a>
+  <header>
+    <div class="wrap nav" role="navigation" aria-label="Primary">
+      <div class="brand">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Shibaroo</span>
       </div>
+      <nav>
+        <ul>
+          <li><a href="#home" aria-current="page">Home</a></li>
+          <li><a href="#tokenomics">Tokenomics</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#business">Business</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <div class="grid-3" style="margin-top:18px">
-        <div class="card">
-          <strong>Contract</strong>
-          <div class="mono" style="word-break:break-all">ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h</div>
-          <a href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank" rel="noopener">View on pump.fun →</a>
-        </div>
-        <div class="card">
-          <strong>Community</strong>
-          <div class="muted">Join for updates, memes, and alpha.</div>
-          <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
-            <a class="btn" href="https://t.me/+K8QwisITfMNiYjM1" target="_blank" rel="noopener">Join Telegram</a>
-            <a class="btn" href="https://discord.gg/ZytXFnxU" target="_blank" rel="noopener">Join Discord</a>
+  <main id="main">
+    <!-- HERO (like before) -->
+    <section id="home" class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="tag">0% Tax • Community-First • Fast & Lightweight</span>
+          <h1>Meet <span class="mono">SHIBAROO</span> — Shiba energy with kangaroo hops 🐶🦘</h1>
+          <p class="lead">
+            Born for fun, built for community. Straightforward tokenomics and a playful brand.
+          </p>
+          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="card" href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank" rel="noopener">Buy on pump.fun →</a>
+            <a class="card" href="https://t.me/+K8QwisITfMNiYjM1" target="_blank" rel="noopener">Join Telegram</a>
+            <a class="card" href="https://discord.gg/ZytXFnxU" target="_blank" rel="noopener">Join Discord</a>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <strong>Contract</strong>
+            <div class="mono" style="word-break:break-all">ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h</div>
+            <small class="muted">Always verify the address before transactions.</small>
           </div>
         </div>
+
+        <!-- The banner image you uploaded originally -->
+        <figure class="hero-media" aria-labelledby="hero-caption">
+          <img src="/banner.jpg" alt="Shibaroo hero banner based on the original uploaded artwork">
+          <figcaption id="hero-caption">Shibaroo mascot banner</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- TOKENOMICS -->
+    <section id="tokenomics">
+      <div class="wrap">
+        <h2>Tokenomics</h2>
+        <div class="kpis">
+          <div class="card">
+            <div class="muted">Buy/Sell Tax</div>
+            <div style="font-size:22px;font-weight:800">0%</div>
+          </div>
+          <div class="card">
+            <div class="muted">Supply</div>
+            <div style="font-size:22px;font-weight:800">1,000,000,000</div>
+          </div>
+          <div class="card">
+            <div class="muted">Liquidity</div>
+            <div style="font-size:22px;font-weight:800">Locked*</div>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:8px;font-size:12px">*Lock details announced in community channels.</p>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap">
+      <div class="wrap">
+        <h2>Roadmap</h2>
+        <div class="kpis">
+          <div class="card">
+            <strong>Phase 1 — Launch</strong>
+            <ul>
+              <li>Website + socials live</li>
+              <li>Initial meme drops</li>
+              <li>Community events</li>
+            </ul>
+          </div>
+          <div class="card">
+            <strong>Phase 2 — Growth</strong>
+            <ul>
+              <li>Listings tracking</li>
+              <li>Marketing pushes</li>
+              <li>Partnerships</li>
+            </ul>
+          </div>
+          <div class="card">
+            <strong>Phase 3 — Utility & Fun</strong>
+            <ul>
+              <li>Mini-games / leaderboards</li>
+              <li>Merch + IRL challenges</li>
+              <li>Community proposals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="wrap">
+        <h2>FAQ</h2>
+        <details>
+          <summary>What is Shibaroo?</summary>
+          <p>A community-driven meme token with a simple, transparent approach.</p>
+        </details>
+        <details>
+          <summary>Is this financial advice?</summary>
+          <p>No. Do your own research and only risk what you can afford to lose.</p>
+        </details>
+        <details>
+          <summary>Where can I buy SHIBAROO?</summary>
+          <p>On pump.fun: <a href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank" rel="noopener">view listing</a>.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- BUSINESS (under construction, like before) -->
+    <section id="business">
+      <div class="wrap">
+        <h2>Business</h2>
         <div class="card">
-          <strong>Disclaimer</strong>
-          <div class="muted">Meme coin. No financial advice. Do your own research. This site is for entertainment/education only.</div>
+          <p class="muted" style="margin:0">Under construction. Public stats will link to SoloPool:</p>
+          <p style="margin:.5rem 0 0">
+            <a href="https://bch.solopool.org/account/bitcoincash:qp979vkd54dujwnu67rwlsccy572www4rq9e0suztq" target="_blank" rel="noopener">
+              Open BCH SoloPool Account →
+            </a>
+          </p>
         </div>
       </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year"></span> Shibaroo. All rights reserved.</div>
+      <div class="muted" style="margin-top:6px">Meme coin. No financial advice. Educational/entertainment only.</div>
     </div>
+  </footer>
 
-    <div class="card" aria-label="Hero illustration">
-      <!-- Replace banner.jpg with your uploaded artwork -->
-      <div class="illus" role="img" aria-label="Shibaroo mascot banner"></div>
+  <!-- Back to top -->
+  <a href="#home" class="top" id="backToTop" aria-label="Back to top">↑</a>
+
+  <noscript>
+    <div class="wrap" style="margin:12px 0;color:#ffb2b2">
+      JavaScript is disabled. Smooth scrolling and back-to-top are limited.
     </div>
-  </div>
-</main>
+  </noscript>
 
-<section id="tokenomics">
-  <div class="wrap">
-    <h2>Tokenomics</h2>
-    <p class="muted">Simple & transparent. Built for the community.</p>
-    <div class="kpis" style="margin-top:14px">
-      <div class="kpi"><div class="muted">Buy/Sell Tax</div><div style="font-size:24px;font-weight:800">0%</div></div>
-      <div class="kpi"><div class="muted">Supply</div><div style="font-size:24px;font-weight:800">1,000,000,000</div></div>
-      <div class="kpi"><div class="muted">Liquidity</div><div style="font-size:24px;font-weight:800">Locked*</div></div>
-      <div class="kpi"><div class="muted">Contract</div><div class="mono" style="font-size:12px">ANVo8E...Dh7h</div></div>
-    </div>
-    <p class="muted" style="margin-top:8px;font-size:12px">*Lock details will be announced in the community channels.</p>
-  </div>
-</section>
+  <script defer>
+    // Update © year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<section id="roadmap">
-  <div class="wrap">
-    <h2>Roadmap</h2>
-    <div class="grid-3">
-      <div class="card">
-        <strong>Phase 1 – Launch</strong>
-        <ul>
-          <li>Website + socials live</li>
-          <li>Initial meme drops</li>
-          <li>Community events</li>
-        </ul>
-      </div>
-      <div class="card">
-        <strong>Phase 2 – Growth</strong>
-        <ul>
-          <li>Listings tracking</li>
-          <li>Marketing pushes</li>
-          <li>Partnerships</li>
-        </ul>
-      </div>
-      <div class="card">
-        <strong>Phase 3 – Utility & Fun</strong>
-        <ul>
-          <li>Mini-games / leaderboards</li>
-          <li>Merch + IRL challenges</li>
-          <li>Community proposals</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap">
-    <h2>FAQ</h2>
-    <div class="faq">
-      <details>
-        <summary>What is Shibaroo?</summary>
-        <p>A lightweight, community-driven meme token with a playful brand and simple tokenomics.</p>
-      </details>
-      <details>
-        <summary>Is this financial advice?</summary>
-        <p>No. Please research independently and only risk what you can afford to lose.</p>
-      </details>
-      <details>
-        <summary>Where can I buy SHIBAROO?</summary>
-        <p>On pump.fun: <a href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank" rel="noopener">open listing</a>.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section id="business">
-  <div class="wrap">
-    <h2>Business (BCH SoloPool)</h2>
-    <p class="muted">Live stats for our BCH address from SoloPool. This uses a tiny proxy to avoid CORS and keep your API key (if any) safe.</p>
-
-    <!-- Widget -->
-    <div class="card" id="solopool-widget" aria-live="polite">
-      <div class="muted" style="margin-bottom:8px">Wallet:</div>
-      <div class="mono" style="word-break:break-all;margin-bottom:12px">
-        bitcoincash:qp979vkd54dujwnu67rwlsccy572www4rq9e0suztq
-      </div>
-      <div id="sp-status" class="muted">Loading SoloPool data…</div>
-      <div id="sp-grid" style="margin-top:12px;display:none" class="grid-3">
-        <div class="kpi">
-          <div class="muted">Hashrate</div>
-          <div id="sp-hash" style="font-size:22px;font-weight:700">—</div>
-        </div>
-        <div class="kpi">
-          <div class="muted">Shares</div>
-          <div id="sp-shares" style="font-size:22px;font-weight:700">—</div>
-        </div>
-        <div class="kpi">
-          <div class="muted">Last Share</div>
-          <div id="sp-last" style="font-size:22px;font-weight:700">—</div>
-        </div>
-        <div class="kpi">
-          <div class="muted">Unpaid</div>
-          <div id="sp-unpaid" style="font-size:22px;font-weight:700">—</div>
-        </div>
-        <div class="kpi">
-          <div class="muted">Total Paid</div>
-          <div id="sp-paid" style="font-size:22px;font-weight:700">—</div>
-        </div>
-        <div class="kpi">
-          <div class="muted">Min Payout</div>
-          <div id="sp-min" style="font-size:22px;font-weight:700">—</div>
-        </div>
-      </div>
-      <div style="margin-top:10px">
-        <a id="sp-link" target="_blank" rel="noopener" href="https://bch.solopool.org/account/bitcoincash:qp979vkd54dujwnu67rwlsccy572www4rq9e0suztq">Open on SoloPool →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div>© <span id="year"></span> Shibaroo. All rights reserved.</div>
-  </div>
-</footer>
-
-<a href="#home" class="top" aria-label="Back to top">↑</a>
-
-<script>
-  // Smooth-scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+    // Smooth scroll on anchor clicks (respects reduced motion)
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        const t = document.querySelector(id);
+        if(t){
+          e.preventDefault();
+          if(reduceMotion){ t.scrollIntoView(); }
+          else { t.scrollIntoView({behavior:'smooth', block:'start'}); }
+          // set active
+          document.querySelectorAll('nav a[aria-current]').forEach(n=>n.removeAttribute('aria-current'));
+          const navLink = document.querySelector('nav a[href="'+id+'"]');
+          if(navLink) navLink.setAttribute('aria-current','page');
+          history.replaceState(null, '', id);
+        }
+      });
     });
-  });
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ===== SoloPool widget (via serverless proxy) =====
-  // Set this to your deployed function path (Netlify example: /.netlify/functions/solopool)
-  const PROXY_ENDPOINT = '/.netlify/functions/solopool';
-  const BCH_ADDRESS = 'bitcoincash:qp979vkd54dujwnu67rwlsccy572www4rq9e0suztq';
-
-  async function loadSoloPool(){
-    const statusEl = document.getElementById('sp-status');
-    const gridEl = document.getElementById('sp-grid');
-    try{
-      statusEl.textContent = 'Loading SoloPool data…';
-      const res = await fetch(`${PROXY_ENDPOINT}?address=${encodeURIComponent(BCH_ADDRESS)}`, {cache:'no-store'});
-      if(!res.ok) throw new Error('Bad response: '+res.status);
-      const data = await res.json();
-      // Expected normalized payload from proxy:
-      // { hashrate, shares, lastShare, unpaid, totalPaid, minPayout }
-      document.getElementById('sp-hash').textContent   = data.hashrate ?? '—';
-      document.getElementById('sp-shares').textContent = data.shares ?? '—';
-      document.getElementById('sp-last').textContent   = data.lastShare ?? '—';
-      document.getElementById('sp-unpaid').textContent = data.unpaid ?? '—';
-      document.getElementById('sp-paid').textContent   = data.totalPaid ?? '—';
-      document.getElementById('sp-min').textContent    = data.minPayout ?? '—';
-      gridEl.style.display = 'grid';
-      statusEl.textContent = 'Live data loaded.';
-    }catch(err){
-      console.error(err);
-      statusEl.textContent = 'Could not load SoloPool data (proxy offline or CORS).';
-    }
-  }
-  loadSoloPool();
-</script>
+    // Back to top visibility
+    const topBtn = document.getElementById('backToTop');
+    const toggleTop = () => {
+      if (window.scrollY > 400) topBtn.classList.add('show');
+      else topBtn.classList.remove('show');
+    };
+    toggleTop();
+    window.addEventListener('scroll', toggleTop, {passive:true});
+  </script>
 </body>
 </html>
