@@ -1,250 +1,115 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Core -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Shibaroo — Meme Token (Official Site)</title>
-  <meta name="description" content="Shibaroo blends the charm of a Shiba Inu with the bounce of a kangaroo. Fun, community-driven meme token with 0% buy/sell tax.">
-
-  <!-- Canonical + robots -->
-  <link rel="canonical" href="https://www.shibaroo.com/">
-  <meta name="robots" content="index,follow">
-
-  <!-- Icons + PWA -->
-  <link rel="icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#EBD9B3">
-
-  <!-- Social previews -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.shibaroo.com/">
-  <meta property="og:title" content="Shibaroo — Meme Token (Official Site)">
-  <meta property="og:description" content="Shiba energy. Kangaroo hops. 0% buy/sell tax. Join the community.">
-  <meta property="og:image" content="https://www.shibaroo.com/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Shibaroo — Meme Token (Official Site)">
-  <meta name="twitter:description" content="Shiba energy. Kangaroo hops. 0% buy/sell tax.">
-  <meta name="twitter:image" content="https://www.shibaroo.com/og-image.jpg">
-
-  <!-- Minimal font stack for fast paint -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shibaroo – Official Meme Token</title>
+  <meta name="description" content="Shibaroo: shiba + kangaroo. A lightweight, fast meme token site for GitHub Pages. No backend." />
   <style>
-    :root{
-      /* Palette (cream UI like your screenshot) */
-      --paper:#F3E6C9;        /* page background */
-      --paper-2:#F0E0BE;      /* cards */
-      --ink:#2b2b2b;
-      --muted:#5e5143;
-      --line:#927A57;
-      --shadow: rgba(0,0,0,.06);
-
-      /* Tab colors */
-      --tab-home:#E5D09F;
-      --tab-tok:#BFE3B6;
-      --tab-road:#F1B6B6;
-      --tab-faq:#BFD4F1;
-      --tab-biz:#D0B4E8;
-
-      /* Buttons */
-      --btn:#f6efe0;
-      --btn-line:#8c7451;
-
-      /* Links */
-      --link:#2a57c6;
-      --link-h:#1a42a3;
-    }
-
-    /* Base */
+    :root{--bg:#f7e9c9;--ink:#3c2f2f;--tab1:#f3c480;--tab2:#c7e38f;--tab3:#ebb1d3;--tab4:#b0d8f5;--tab5:#dcb0f5;--accent:#7b5bff}
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial;}
-    img{max-width:100%;height:auto}
-    a{color:var(--link);text-decoration:underline}
-    a:hover{color:var(--link-h)}
-    :focus-visible{outline:2px solid #3c74ff; outline-offset: 2px}
-
-    .wrap{max-width:960px;margin:0 auto;padding:0 14px}
-
-    /* Frame */
-    .frame{border:2px solid var(--line); border-radius:8px; box-shadow:0 4px 16px var(--shadow); background:var(--paper-2);}
-    header.frame{position:sticky; top:10px; z-index:20; margin:10px auto; padding:10px 12px}
-    main.frame{margin:0 auto 10px; padding:14px}
-    footer.frame{margin:0 auto 16px; padding:12px; color:var(--muted); text-align:center}
-
-    /* Tabs (like your screenshot) */
-    .tabs{display:flex; gap:8px; flex-wrap:wrap; padding:6px}
-    .tab{display:inline-block; padding:8px 12px; border:2px solid var(--line); border-radius:8px;
-         text-decoration:none; color:var(--ink); background:var(--tab-home); box-shadow:0 3px 0 #b1956f inset}
-    .tab:hover{text-decoration:none; filter:saturate(1.05)}
-    .tab[data-t="tok"]{background:var(--tab-tok)}
-    .tab[data-t="road"]{background:var(--tab-road)}
-    .tab[data-t="faq"]{background:var(--tab-faq)}
-    .tab[data-t="biz"]{background:var(--tab-biz)}
-
-    /* Hero */
-    .hero{padding:22px 10px 16px}
-    .hero .logo{display:block;margin:0 auto 6px; width:140px; height:auto}
-    h1{font-size:34px; text-align:center; margin:4px 0 6px}
-    .underline{width:120px; height:4px; background:#5d4a2d; margin:6px auto 14px; border-radius:3px}
-
-    /* CTA row */
-    .btns{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:10px 0}
-    .btn{background:var(--btn); border:2px solid var(--btn-line); padding:8px 12px; border-radius:8px;
-         color:var(--ink); text-decoration:none; box-shadow:0 2px 0 #b1956f inset}
-    .btn:hover{filter:brightness(1.02)}
-
-    /* Description bubble */
-    .bubble{max-width:680px; margin:10px auto; background:var(--paper); border:2px solid var(--line);
-            border-radius:12px; padding:12px; text-align:center; color:var(--ink);
-            box-shadow:0 2px 0 #c1a67c inset}
-
-    /* Grid (Tokenomics + Business) */
-    .grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:12px}
-    .card{background:var(--paper); border:2px solid var(--line); border-radius:12px; padding:12px; box-shadow:0 2px 0 #c1a67c inset}
-    .card h3{margin:0 0 6px}
-    .mono{font-family: ui-monospace, Menlo, Consolas, "SFMono-Regular", monospace}
-
-    /* Sections */
-    section{margin:12px 0}
-    .section-box{padding:12px; background:var(--paper); border:2px solid var(--line); border-radius:12px;
-                 box-shadow:0 2px 0 #c1a67c inset}
-    h2{font-size:22px; margin:0 0 8px}
-
-    /* FAQ */
-    .faq p{margin:.3rem 0}
-    .q{font-weight:700}
-    .a{margin-left:.25rem}
-
-    /* Back to top */
-    .top{position:fixed; right:14px; bottom:14px; background:var(--paper); border:2px solid var(--line);
-         border-radius:999px; padding:10px 12px; text-decoration:none; color:var(--ink); display:none}
-    .top.show{display:inline-flex}
-
-    /* Responsive */
-    @media (max-width:820px){ .grid{grid-template-columns:1fr} }
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    .wrap{max-width:1100px;margin:0 auto;padding:1.25rem}
+    .chrome{border:2px solid var(--ink);border-radius:10px;overflow:hidden;box-shadow:0 8px 0 rgba(0,0,0,.1)}
+    .tabs{display:flex;gap:.4rem;padding:.5rem .9rem;background:#fbe6bb;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+    .tab{display:inline-block;text-decoration:none;color:inherit;padding:.5rem .9rem;border:2px solid var(--ink);border-bottom:none;border-top-left-radius:10px;border-top-right-radius:10px;font-weight:600}
+    .tabs .tab:nth-child(1){background:var(--tab1)}
+    .tabs .tab:nth-child(2){background:var(--tab2)}
+    .tabs .tab:nth-child(3){background:var(--tab3)}
+    .tabs .tab:nth-child(4){background:var(--tab4)}
+    .tabs .tab:nth-child(5){background:var(--tab5)}
+    .tab.is-active{box-shadow:0 6px 0 0 var(--bg) inset}
+    h1{text-align:center;font-size:clamp(28px,4vw,44px);margin:.5rem 0}
+    .underline{height:8px;background:var(--accent);width:240px;border:2px solid var(--ink);border-radius:6px;margin:.4rem auto 1rem}
+    .logo{max-width:260px;width:100%;height:auto;border-radius:12px;display:block;margin:0 auto 8px}
+    .banner-desc{text-align:center;font-weight:700;font-size:1.1rem;max-width:800px;margin:0 auto;background:#fff3d2;border:2px solid var(--ink);border-radius:12px;padding:1rem}
+    .section{margin:2rem 0}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+    @media(max-width:840px){.row{grid-template-columns:1fr}}
+    .panel{border:2px solid var(--ink);border-radius:12px;background:#fff6df;padding:1rem}
+    .btns{display:flex;flex-wrap:wrap;gap:.6rem;margin:.5rem 0}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:2px solid var(--ink);border-radius:10px;background:#ffe8c7;text-decoration:none;color:inherit;font-weight:700}
+    footer{padding:1rem .9rem;border-top:2px solid var(--ink);background:#fbe6bb;text-align:center}
   </style>
 </head>
 <body>
-  <a href="#main" class="wrap" style="position:absolute;left:-9999px">Skip to content</a>
+  <div class="wrap">
+    <div class="chrome">
+      <nav class="tabs">
+        <a class="tab is-active" href="#home">Home</a>
+        <a class="tab" href="#tokenomics">Tokenomics</a>
+        <a class="tab" href="#roadmap">Roadmap</a>
+        <a class="tab" href="#faq">FAQ</a>
+        <a class="tab" href="business.html">Business</a>
+      </nav>
 
-  <header class="frame wrap" role="navigation" aria-label="Primary">
-    <nav class="tabs" aria-label="Section tabs">
-      <a class="tab" href="#home">Home</a>
-      <a class="tab" data-t="tok" href="#tokenomics">Tokenomics</a>
-      <a class="tab" data-t="road" href="#roadmap">Roadmap</a>
-      <a class="tab" data-t="faq" href="#faq">FAQ</a>
-      <a class="tab" data-t="biz" href="#business">Business</a>
-    </nav>
-  </header>
-
-  <main id="main" class="frame wrap" tabindex="-1">
-    <!-- HERO -->
-    <section id="home" class="hero" aria-labelledby="hero-heading">
-      <img class="logo" src="/banner.jpg" alt="Shibaroo mascot logo — Shiba Inu with kangaroo energy">
-      <h1 id="hero-heading">SHIBAROO</h1>
-      <div class="underline" aria-hidden="true"></div>
-
-      <div class="btns" role="group" aria-label="Primary actions">
-        <a class="btn" href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank" rel="noopener">Buy on pump.fun</a>
-        <a class="btn" href="https://t.me/+K8QwisITfMNiYjM1" target="_blank" rel="noopener">Join Telegram</a>
-        <a class="btn" href="https://discord.gg/ZytXFnxU" target="_blank" rel="noopener">Join Discord</a>
-      </div>
-
-      <div class="bubble">
-        Shibaroo is a meme token that blends the charm of a Shiba Inu with the bounce of a kangaroo.
-        Fun, community-driven, and ready to hop into the crypto world with good vibes only!
-      </div>
-
-      <div class="grid" aria-label="Overview panels">
-        <div class="card">
-          <h3>Tokenomics Overview</h3>
-          <ul>
-            <li>Supply: <strong>1,000,000,000</strong></li>
-            <li>Tax: <strong>0% buy / 0% sell</strong></li>
-            <li>Liquidity: <strong>Locked</strong></li>
-            <li>Utility: <strong>Community &amp; Fun</strong></li>
-          </ul>
-          <p class="mono" style="margin:.5rem 0 0;word-break:break-all">
-            Contract: ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h
-          </p>
+      <main id="home">
+        <header>
+          <img class="logo" src="shibaroo-logo.png" alt="Shibaroo Logo" />
+          <h1>SHIBAROO</h1>
+          <div class="underline"></div>
+          <div class="btns" style="justify-content:center">
+            <a class="btn" href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank" rel="noopener">Buy on pump.fun</a>
+            <a class="btn" href="https://t.me/+TUTsraH70hRhYjdl" target="_blank" rel="noopener">Join Telegram</a>
+            <a class="btn" href="https://discord.gg/Y2zhnSaVTu" target="_blank" rel="noopener">Join Discord</a>
+          </div>
+        </header>
+        <div class="banner-desc">
+          Shibaroo is a meme token that blends the charm of a Shiba Inu with the bounce of a kangaroo. Fun, community-driven, and ready to hop into the crypto world with good vibes only!
         </div>
 
-        <div class="card">
-          <h3>Business</h3>
-          <p class="muted">This page is under construction. Check back soon for exciting business opportunities!</p>
+        <div class="section row">
+          <div class="panel" id="tokenomics">
+            <h2>Tokenomics Overview</h2>
+            <ul>
+              <li>Supply: 1,000,000,000</li>
+              <li>Tax: 0% buy / 0% sell</li>
+              <li>Liquidity: Locked</li>
+              <li>Utility: Community & Fun</li>
+            </ul>
+          </div>
+          <div class="panel" id="business">
+            <h2>Business</h2>
+            <p>This page is under construction. Check back soon for exciting business opportunities!</p>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ROADMAP -->
-    <section id="roadmap" aria-labelledby="roadmap-h">
-      <div class="section-box">
-        <h2 id="roadmap-h">Roadmap</h2>
-        <ul>
-          <li><strong>Phase 1:</strong> Launch token, build community, list on pump.fun</li>
-          <li><strong>Phase 2:</strong> Marketing push, partnerships, meme contests</li>
-          <li><strong>Phase 3:</strong> Listings on larger exchanges, community events</li>
-          <li><strong>Phase 4:</strong> Utility expansion &amp; future development</li>
-        </ul>
-      </div>
-    </section>
+        <div class="section" id="roadmap">
+          <div class="panel">
+            <h2>Roadmap</h2>
+            <ul>
+              <li><strong>Phase 1:</strong> Launch token, build community, list on pump.fun</li>
+              <li><strong>Phase 2:</strong> Marketing push, partnerships, meme contests</li>
+              <li><strong>Phase 3:</strong> Listings on larger exchanges, community events</li>
+              <li><strong>Phase 4:</strong> Utility expansion & future development</li>
+            </ul>
+          </div>
+        </div>
 
-    <!-- FAQ -->
-    <section id="faq" aria-labelledby="faq-h">
-      <div class="section-box faq">
-        <h2 id="faq-h">FAQ</h2>
+        <div class="section" id="faq">
+          <div class="panel">
+            <h2>FAQ</h2>
+            <p><strong>Q:</strong> Is this financial advice?<br><strong>A:</strong> Absolutely not. DYOR and have fun.</p>
+            <p><strong>Q:</strong> Any taxes?<br><strong>A:</strong> 0% buy, 0% sell. Simple and fair.</p>
+            <p><strong>Q:</strong> Where can I buy?<br><strong>A:</strong> On <a href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank">pump.fun</a>.</p>
+          </div>
+        </div>
 
-        <p class="q">Q: Is this financial advice?</p>
-        <p class="a">A: Absolutely not. DYOR and have fun.</p>
+      </main>
 
-        <p class="q">Q: Any taxes?</p>
-        <p class="a">A: 0% buy, 0% sell. Simple and fair.</p>
-
-        <p class="q">Q: Where can I buy?</p>
-        <p class="a">A: On <a href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank" rel="noopener">pump.fun</a>.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="frame wrap" role="contentinfo">
-    <small>© <span id="year"></span> Shibaroo. All rights reserved.</small>
-  </footer>
-
-  <!-- Back to top -->
-  <a href="#home" class="top" id="backToTop" aria-label="Back to top">↑</a>
-
-  <noscript>
-    <div class="wrap" style="margin:10px 0;color:#7a3e3e">
-      JavaScript is disabled. Smooth scrolling and the back-to-top button are limited.
+      <footer>
+        © <span id="year"></span> Shibaroo. All rights reserved.
+      </footer>
     </div>
-  </noscript>
-
-  <script defer>
-    // Year
+  </div>
+  <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Smooth scroll (respects reduced motion)
-    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        const t = document.querySelector(id);
-        if(!t) return;
-        e.preventDefault();
-        reduceMotion ? t.scrollIntoView() : t.scrollIntoView({behavior:'smooth', block:'start'});
-        history.replaceState(null,'',id);
-      });
-    });
-
-    // Back to top visibility
-    const topBtn = document.getElementById('backToTop');
-    const toggleTop = () => { window.scrollY > 380 ? topBtn.classList.add('show') : topBtn.classList.remove('show'); };
-    toggleTop();
-    addEventListener('scroll', toggleTop, {passive:true});
+    const tabs=document.querySelectorAll('.tabs .tab');
+    const map={'#home':tabs[0],'#tokenomics':tabs[1],'#roadmap':tabs[2],'#faq':tabs[3]};
+    tabs.forEach(a=>a.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('is-active'));a.classList.add('is-active');}));
+    const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){Object.values(map).forEach(t=>t.classList.remove('is-active'));map['#'+e.target.id]?.classList.add('is-active');}});},{rootMargin:'-45% 0px -50% 0px'});
+    ['home','tokenomics','roadmap','faq'].forEach(id=>{const el=document.getElementById(id);if(el) io.observe(el);});
   </script>
 </body>
 </html>
