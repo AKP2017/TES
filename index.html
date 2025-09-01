@@ -5,14 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shibaroo – Official Meme Token</title>
   <meta name="description" content="Shibaroo: shiba + kangaroo. A lightweight, fast meme token site for GitHub Pages. No backend." />
+  <!-- Social / SEO additions -->
+  <meta property="og:title" content="Shibaroo – Official Meme Token" />
+  <meta property="og:description" content="Shibaroo: shiba + kangaroo. Fun, community-driven meme token." />
+  <meta property="og:image" content="./shibaroo-logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="./shibaroo-logo.png" />
+  <link rel="preconnect" href="https://pump.fun" crossorigin />
+  <link rel="preconnect" href="https://t.me" crossorigin />
+  <link rel="preconnect" href="https://discord.gg" crossorigin />
+  <link rel="dns-prefetch" href="https://pump.fun" />
+  <link rel="dns-prefetch" href="https://t.me" />
+  <link rel="dns-prefetch" href="https://discord.gg" />
+  <link rel="canonical" href="/" />
   <style>
     :root{--bg:#f7e9c9;--ink:#3c2f2f;--tab1:#f3c480;--tab2:#c7e38f;--tab3:#ebb1d3;--tab4:#b0d8f5;--tab5:#dcb0f5;--accent:#7b5bff}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
     .wrap{max-width:1100px;margin:0 auto;padding:1.25rem}
-    .chrome{border:2px solid var(--ink);border-radius:10px;overflow:hidden;box-shadow:0 8px 0 rgba(0,0,0,.1)}
-    .tabs{display:flex;gap:.4rem;padding:.5rem .9rem;background:#fbe6bb;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+  .chrome{border:2px solid var(--ink);border-radius:10px;overflow:visible;box-shadow:0 8px 0 rgba(0,0,0,.1)}
+  .tabs{display:flex;gap:.4rem;padding:.5rem .9rem;background:#fbe6bb;border-bottom:2px solid var(--ink);flex-wrap:wrap;position:sticky;top:0;z-index:50;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
     .tab{display:inline-block;text-decoration:none;color:inherit;padding:.5rem .9rem;border:2px solid var(--ink);border-bottom:none;border-top-left-radius:10px;border-top-right-radius:10px;font-weight:600}
     .tabs .tab:nth-child(1){background:var(--tab1)}
     .tabs .tab:nth-child(2){background:var(--tab2)}
@@ -23,6 +37,8 @@
     h1{text-align:center;font-size:clamp(28px,4vw,44px);margin:.5rem 0}
     .underline{height:8px;background:var(--accent);width:240px;border:2px solid var(--ink);border-radius:6px;margin:.4rem auto 1rem}
     .logo{max-width:260px;width:100%;height:auto;border-radius:12px;display:block;margin:0 auto 8px}
+  .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  .skip-link:focus{position:static;width:auto;height:auto;left:0;background:#fff6df;padding:.5rem;border:2px solid var(--ink);border-radius:6px}
     .banner-desc{text-align:center;font-weight:700;font-size:1.1rem;max-width:800px;margin:0 auto;background:#fff3d2;border:2px solid var(--ink);border-radius:12px;padding:1rem}
     .section{margin:2rem 0}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
@@ -30,29 +46,63 @@
     .panel{border:2px solid var(--ink);border-radius:12px;background:#fff6df;padding:1rem}
     .btns{display:flex;flex-wrap:wrap;gap:.6rem;margin:.5rem 0}
     .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:2px solid var(--ink);border-radius:10px;background:#ffe8c7;text-decoration:none;color:inherit;font-weight:700}
+  .btn img.icon{width:20px;height:20px;display:inline-block;vertical-align:middle;margin-right:6px}
+  /* Inline SVG icons: inherit currentColor so buttons can color icons via text color */
+  .btn svg.icon{width:20px;height:20px;display:inline-block;vertical-align:middle;margin-right:6px;fill:currentColor}
     footer{padding:1rem .9rem;border-top:2px solid var(--ink);background:#fbe6bb;text-align:center}
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#home">Skip to content</a>
   <div class="wrap">
     <div class="chrome">
-      <nav class="tabs">
+        <nav class="tabs">
         <a class="tab is-active" href="#home">Home</a>
         <a class="tab" href="#tokenomics">Tokenomics</a>
         <a class="tab" href="#roadmap">Roadmap</a>
         <a class="tab" href="#faq">FAQ</a>
-        <a class="tab" href="business.html">Business</a>
+        <a class="tab" href="#business">Business</a>
       </nav>
 
       <main id="home">
         <header>
-          <img class="logo" src="shibaroo-logo.png" alt="Shibaroo Logo" />
+          <img class="logo" src="./shibaroo-logo-256.svg" srcset="./shibaroo-logo-256.svg 256w, ./shibaroo-logo.png 1024w" sizes="(max-width:400px) 180px, 260px" alt="Shibaroo Logo" width="260" height="260" />
           <h1>SHIBAROO</h1>
           <div class="underline"></div>
           <div class="btns" style="justify-content:center">
-            <a class="btn" href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank" rel="noopener">Buy on pump.fun</a>
-            <a class="btn" href="https://t.me/+TUTsraH70hRhYjdl" target="_blank" rel="noopener">Join Telegram</a>
-            <a class="btn" href="https://discord.gg/Y2zhnSaVTu" target="_blank" rel="noopener">Join Discord</a>
+            <a class="btn" href="https://pump.fun/ANVo8Env672JQbwYPqG6a6DyNaRNbVh5xYKNbmDhNh7h" target="_blank" rel="noopener">
+              <!-- simplified Buy (paw) icon, uses currentColor -->
+              <svg class="icon" aria-hidden="true" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" fill="none" />
+                <!-- paw: four toes + pad -->
+                <circle cx="7.2" cy="7" r="1.6" />
+                <circle cx="11.9" cy="5.6" r="1.8" />
+                <circle cx="16.6" cy="7" r="1.6" />
+                <circle cx="9.6" cy="9.4" r="1.9" />
+                <path d="M7.2 13.6c1.2-1.8 3.2-2.6 4.7-2.6s3.5.9 4.7 2.6c.9 1.2.6 3.2-.6 4.1-.9.7-2.2 1.1-4.1 1.1s-3.2-.4-4.1-1.1c-1.2-.9-1.5-2.9-.6-4.1z" />
+              </svg>
+              Buy on pump.fun
+            </a>
+            <a class="btn" href="https://t.me/+TUTsraH70hRhYjdl" target="_blank" rel="noopener">
+              <!-- simplified Telegram (paper plane) icon, uses currentColor -->
+              <svg class="icon" aria-hidden="true" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" fill="none" />
+                <path d="M3.4 11.1l15.2-6.7c.6-.2 1.2.3.9.9L15.6 18.6c-.3.6-.9.8-1.5.5l-4.1-2.4-1.9 1.8c-.4.4-1 .2-1.1-.4L3.4 11.1z" />
+              </svg>
+              Join Telegram
+            </a>
+            <a class="btn" href="https://discord.gg/Y2zhnSaVTu" target="_blank" rel="noopener">
+              <!-- simplified Discord (chat) icon, uses currentColor -->
+              <svg class="icon" aria-hidden="true" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" fill="none" />
+                <!-- chat bubble with three dots -->
+                <path d="M4 3h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H8l-4 4V4a1 1 0 0 1 1-1z" />
+                <circle cx="9" cy="10.5" r="1" />
+                <circle cx="12" cy="10.5" r="1" />
+                <circle cx="15" cy="10.5" r="1" />
+              </svg>
+              Join Discord
+            </a>
           </div>
         </header>
         <div class="banner-desc">
@@ -71,7 +121,24 @@
           </div>
           <div class="panel" id="business">
             <h2>Business</h2>
-            <p>This page is under construction. Check back soon for exciting business opportunities!</p>
+            <p>This page shows live mining account stats from SoloPool.</p>
+            <div id="solopool" style="margin-top:.75rem">
+              <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap">
+                <div style="min-width:180px">
+                  <div style="font-weight:700">Current Hashrate</div>
+                  <div id="sp-hashrate">—</div>
+                </div>
+                <div style="min-width:160px">
+                  <div style="font-weight:700">Blocks (last 24h)</div>
+                  <div id="sp-blocks">—</div>
+                </div>
+                <div style="flex:1;min-width:220px">
+                  <div style="font-weight:700">Hashrate (recent)</div>
+                  <svg id="sp-spark" width="240" height="48" viewBox="0 0 240 48" preserveAspectRatio="none" style="width:100%;height:48px;border:1px solid rgba(0,0,0,0.06);background:#fffdf7;border-radius:6px"></svg>
+                </div>
+              </div>
+              <div style="margin-top:.5rem;font-size:.9rem;color:#3c2f2f">Data sourced from <a href="#" id="sp-link">SoloPool</a>. Updates every 30s.</div>
+            </div>
           </div>
         </div>
 
@@ -80,9 +147,9 @@
             <h2>Roadmap</h2>
             <ul>
               <li><strong>Phase 1:</strong> Launch token, build community, list on pump.fun</li>
-              <li><strong>Phase 2:</strong> Marketing push, partnerships, meme contests</li>
+              <li><strong>Phase 2:</strong> Developer will sold their token to buy asic miner for solo mining </li>
               <li><strong>Phase 3:</strong> Listings on larger exchanges, community events</li>
-              <li><strong>Phase 4:</strong> Utility expansion & future development</li>
+              <li><strong>Phase 4:</strong> Utility expansion & future development with community driven</li>
             </ul>
           </div>
         </div>
@@ -105,11 +172,115 @@
   </div>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    const tabs=document.querySelectorAll('.tabs .tab');
-    const map={'#home':tabs[0],'#tokenomics':tabs[1],'#roadmap':tabs[2],'#faq':tabs[3]};
+  const tabs=document.querySelectorAll('.tabs .tab');
+  const map={'#home':tabs[0],'#tokenomics':tabs[1],'#roadmap':tabs[2],'#faq':tabs[3],'#business':tabs[4]};
     tabs.forEach(a=>a.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('is-active'));a.classList.add('is-active');}));
     const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){Object.values(map).forEach(t=>t.classList.remove('is-active'));map['#'+e.target.id]?.classList.add('is-active');}});},{rootMargin:'-45% 0px -50% 0px'});
-    ['home','tokenomics','roadmap','faq'].forEach(id=>{const el=document.getElementById(id);if(el) io.observe(el);});
+  ['home','tokenomics','roadmap','faq','business'].forEach(id=>{const el=document.getElementById(id);if(el) io.observe(el);});
+  // If the logo image fails to load (missing/corrupt), swap to a simple inline SVG placeholder
+  (function(){
+    const logo = document.querySelector('.logo');
+    if(!logo) return;
+    logo.addEventListener('error', ()=>{
+      const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="520" height="160">'
+        + '<rect width="100%" height="100%" fill="#fff6df"/>'
+        + '<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" '
+        + 'font-family="system-ui,Segoe UI,Roboto,sans-serif" font-size="36" fill="#3c2f2f">Shibaroo</text></svg>';
+      logo.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+      logo.width = 260;
+    });
+  })();
+  // Runtime diagnostics: log resolved src and computed styles, show page notice if image didn't render
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const logo = document.querySelector('.logo');
+    if(!logo) return;
+    console.log('[logo-debug] document.baseURI=', document.baseURI);
+    console.log('[logo-debug] img.src=', logo.src);
+    const cs = window.getComputedStyle(logo);
+    console.log('[logo-debug] computed-style display=', cs.display, 'visibility=', cs.visibility, 'opacity=', cs.opacity);
+    // small delay to allow image loading
+    setTimeout(()=>{
+      console.log('[logo-debug] naturalWidth=', logo.naturalWidth, 'naturalHeight=', logo.naturalHeight);
+      if(logo.naturalWidth === 0){
+        const note = document.createElement('div');
+        note.style.border = '2px dashed #e07b7b';
+        note.style.background = '#fff3d2';
+        note.style.color = '#3c2f2f';
+        note.style.margin = '0.5rem auto';
+        note.style.maxWidth = '520px';
+        note.style.textAlign = 'center';
+        note.textContent = 'Logo failed to render. See console for details (logo-debug).';
+        logo.parentNode.insertBefore(note, logo.nextSibling);
+      }
+    },250);
+  });
+  // Activate tab from hash on load (so direct links work)
+  (function(){
+    const hash = location.hash;
+    if(!hash) return;
+    const mapEl = document.querySelector('.tabs .tab[href="'+hash+'"]');
+    if(mapEl){ mapEl.click(); }
+  })();
+
+  // --- SoloPool integration: fetch account data and render into Business panel ---
+  (function(){
+    const address = 'bitcoincash:qp979vkd54dujwnu67rwlsccy572www4rq9e0suztq';
+    const endpoint = './functions/solopool?address=' + encodeURIComponent(address);
+    const $hash = document.getElementById('sp-hashrate');
+    const $blocks = document.getElementById('sp-blocks');
+    const $spark = document.getElementById('sp-spark');
+    const $link = document.getElementById('sp-link');
+    if($link) $link.setAttribute('href', 'https://bch.solopool.org/account/' + encodeURIComponent(address));
+
+    function renderSpark(data){
+      if(!data || !data.length) { $spark.innerHTML = ''; return; }
+      const w = 240, h = 48, pad = 6;
+      const min = Math.min(...data); const max = Math.max(...data);
+      const range = (max - min) || 1;
+      const step = (w - pad*2) / Math.max(1, data.length - 1);
+      let d = '';
+      data.forEach((v,i)=>{
+        const x = pad + i*step;
+        const y = pad + (1 - (v - min)/range) * (h - pad*2);
+        d += (i===0? 'M':'L') + x + ' ' + y + ' ';
+      });
+      const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d', d.trim());
+      path.setAttribute('fill','none');
+      path.setAttribute('stroke','#7b5bff');
+      path.setAttribute('stroke-width','2');
+      $spark.innerHTML = '';
+      $spark.appendChild(path);
+    }
+
+    async function fetchAndRender(){
+      try{
+        const res = await fetch(endpoint);
+        if(!res.ok) throw new Error('Network');
+        const j = await res.json();
+        $hash.textContent = j.hashrate || j.hash || j.shares || '—';
+        $blocks.textContent = j.blocks24 || j.blocks || j.blocks24h || '—';
+        // if proxy returned a numeric series, render sparkline
+        if(Array.isArray(j.series) && j.series.length){
+          renderSpark(j.series.slice(-40));
+        } else {
+          // attempt to parse hashrate like "123.4 GH/s" into a simple constant series
+          const m = (j.hashrate||'').match(/([\d.,]+)/);
+          if(m){
+            const n = Number(m[1].replace(/,/g,''));
+            renderSpark(new Array(24).fill(n));
+          }
+        }
+      }catch(err){
+        $hash.textContent = 'error';
+        $blocks.textContent = 'error';
+        $spark.innerHTML = '';
+        console.warn('solopool fetch failed', err);
+      }
+    }
+    fetchAndRender();
+    setInterval(fetchAndRender, 30000);
+  })();
   </script>
 </body>
 </html>

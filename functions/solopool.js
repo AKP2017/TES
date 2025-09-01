@@ -15,14 +15,53 @@ export const onRequestGet = async (context) => {
     const html = await resp.text();
     const getText = (re) => (html.match(re)?.[1] ?? null);
 
-    const hashrate  = getText(/Hashrate[^<]*<\/[^>]*>\s*<[^>]*>\s*([\d.,]+\s*[A-Za-z/]+)</i);
-    const shares    = getText(/Shares[^<]*<\/[^>]*>\s*<[^>]*>\s*([\d.,]+)</i);
-    const lastShare = getText(/Last\s*Share[^<]*<\/[^>]*>\s*<[^>]*>\s*([^<]+)</i);
+    const hashrate  = getText(/Hashrate[^<]*<\/[^>]*>\s*<[^>]*>\s*([\d.,]+\s*[A-Za-z/]+)/i);
+    const shares    = getText(/Shares[^<]*<\/[^>]*>\s*<[^>]*>\s*([\d.,]+)/i);
+    const lastShare = getText(/Last\s*Share[^<]*<\/[^>]*>\s*<[^>]*>\s*([^<]+)/i);
     const unpaid    = getText(/Unpaid\s*Balance[^<]*<\/[^>]*>\s*<[^>]*>\s*([\d.,]+\s*[A-Za-z]+)/i);
     const totalPaid = getText(/Total\s*Paid[^<]*<\/[^>]*>\s*<[^>]*>\s*([\d.,]+\s*[A-Za-z]+)/i);
     const minPayout = getText(/Min\s*Payout[^<]*<\/[^>]*>\s*<[^>]*>\s*([\d.,]+\s*[A-Za-z]+)/i);
 
-    const data = { hashrate, shares, lastShare, unpaid, totalPaid, minPayout };
+    // Try to extract "Blocks (24h)" or "Blocks last 24 hours" text
+    const blocks24 = getText(/Blocks[^<]*?(?:Last|in Last|last)?\s*24\s*Hours[^<]*<\/[^>]*>\s*<[^>]*>\s*([\d,]+)/i)
+                    || getText(/Blocks[^<]*?<[^>]*>\s*([\d,]+)\s*<span[^>]*>\s*last 24/i)
+                    || getText(/Blocks[^<]*<[^>]*>\s*([\d,]+)\s*<\/[^>]*>\s*last\s*24\s*hours/i)
+                    || null;
+
+    // Try to pull a numeric series from inline JS that might power the hashrate graph
+    let series = null;
+    const seriesRegexes = [
+      /chartData\s*=\s*(\[[^\]]+\])/i,
+      /data\s*:\s*\[([^\]]+)\]/i,
+      /labels\s*:\s*\[[^\]]+\][\s\S]*?datasets\s*:\s*\[\s*\{[^\}]*data\s*:\s*(\[[^\]]+\])/i
+    ];
+    for (const re of seriesRegexes) {
+      const m = html.match(re);
+      if (m && m[1]) {
+        try {
+          // normalize numbers: strip non-number chars except . and , and convert to floats
+          const list = m[1].replace(/\s+/g, '').replace(/,/g, ' ').replace(/\s+/g, ',');
+          const arr = JSON.parse(m[1].replace(/([\d.]+)\s*%/g, '"$1"').replace(/'/g, '"'));
+          // If parsed array contains objects, try to map to numeric values
+          if (Array.isArray(arr)) {
+            series = arr.map(v => {
+              if (typeof v === 'number') return Number(v);
+              if (typeof v === 'string') return Number(v.replace(/,/g, '')) || null;
+              if (v && typeof v === 'object') {
+                // try common keys
+                return Number(v.y || v.value || v[0]) || null;
+              }
+              return null;
+            }).filter(x => x !== null);
+            if (series.length) break;
+          }
+        } catch (e) {
+          // ignore parse errors and continue
+        }
+      }
+    }
+
+    const data = { hashrate, shares, lastShare, unpaid, totalPaid, minPayout, blocks24, series };
 
     return new Response(JSON.stringify(data), {
       status: 200,
